@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Validación de número Hexadecimal</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Validación de Hexadecimal, Solo debe Ingresar Números y Letras en Mayusculas.</div>
+        <form id="formulariovalidacionhexadecimal">
+            <input type="text" id="txtValor" name="txtValor" onblur="if(validarHexadecimal(this.value)) alert('El Dato es un número Hexadecimal'); else alert ('El Dato no es un número Hexadecimal')">
+            <input type="button" id="butValor" name="butValor" value="Boton" onclick="if(validarHexadecimal(document.getElementById('txtValor').value) alert('El Dato es un número Hexadecimal'); else alert ('El Dato no es un número Hexadecimal')">
+            <a href="index.html"><h1>Clic Aquí para Limpiar o Borrar Campos.</h1></a><br>
+        </form>
+    </body>
+</html>
+
+<script>
+    function validarHexadecimal(valor){
+        var existeHexadecimal="0";
+        for (i=0; i<valor.length; i++){
+            var caracter = valor.charAt(i);
+            if((caracter>="0" && caracter<="9")||(caracter=="A" || caracter=="B" || caracter=="C" || caracter=="D" || caracter=="E" || caracter=="F")){
+                
+            }
+            else{
+                return false;
+            }
+        }
+        return true;  
+    }
+</script>
